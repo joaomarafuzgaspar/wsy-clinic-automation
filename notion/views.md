@@ -2,7 +2,9 @@
 
 Schema source of truth: [`notion/schema.ts`](../notion/schema.ts)
 
-> **Note:** Notion MCP was not authenticated in this environment. Views below match the implementation plan and are ready to create manually or via API once credentials are set.
+> **Live database:** [Contacts](https://app.notion.com/p/682f574e415b45f2855a2fd925326b99?v=38eae3a5901781fdaccb000c15bcdc00)  
+> **IDs:** `682f574e415b45f2855a2fd925326b99` (database) · `38eae3a5901781fdaccb000c15bcdc00` (default view)  
+> Run `npm run introspect-notion` after setting `NOTION_API_TOKEN` to diff against this doc.
 
 ---
 
@@ -88,7 +90,8 @@ Link from the clinic dashboard sidebar.
 
 | Key | Value |
 |---|---|
-| `NOTION_LEADS_DATABASE_ID` | `PLACEHOLDER_LEADS_DATABASE_ID` |
+| `NOTION_LEADS_DATABASE_ID` | `682f574e415b45f2855a2fd925326b99` |
+| `NOTION_DEFAULT_VIEW_ID` | `38eae3a5901781fdaccb000c15bcdc00` |
 | `NOTION_SETTINGS_PAGE_ID` | `PLACEHOLDER_SETTINGS_PAGE_ID` |
 | `NOTION_ONBOARDING_CHECKLIST_PAGE_ID` | `PLACEHOLDER_ONBOARDING_CHECKLIST_PAGE_ID` |
 

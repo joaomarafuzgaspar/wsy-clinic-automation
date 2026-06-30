@@ -5,7 +5,8 @@
   "description": "White-label dental clinic automation — Notion dashboard + Manychat flows + lead capture glue",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "validate-env": "tsx scripts/validate-env.ts"
+    "validate-env": "tsx scripts/validate-env.ts",
+    "introspect-notion": "tsx scripts/introspect-notion-db.ts"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",

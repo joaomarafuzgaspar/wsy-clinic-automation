@@ -121,8 +121,10 @@ export const NOTION_SETTINGS_SECTIONS = [
 ] as const;
 
 export const NOTION_TEMPLATE_IDS = {
-  /** Master workspace database — duplicate per clinic */
-  leadsDatabaseId: "PLACEHOLDER_LEADS_DATABASE_ID",
+  /** Master workspace database — https://app.notion.com/p/682f574e415b45f2855a2fd925326b99 */
+  leadsDatabaseId: "682f574e415b45f2855a2fd925326b99",
+  /** Default view from shared link */
+  leadsDefaultViewId: "38eae3a5901781fdaccb000c15bcdc00",
   settingsPageId: "PLACEHOLDER_SETTINGS_PAGE_ID",
   onboardingChecklistPageId: "PLACEHOLDER_ONBOARDING_CHECKLIST_PAGE_ID",
   playbookPageId: "PLACEHOLDER_PLAYBOOK_PAGE_ID",
