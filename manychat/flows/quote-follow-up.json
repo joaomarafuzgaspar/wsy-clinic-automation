@@ -1,0 +1,22 @@
+{
+  "flow": "quote-follow-up",
+  "version": "1.0",
+  "channels": ["whatsapp", "instagram", "email"],
+  "entry_trigger": {
+    "type": "tag",
+    "tag": "quoted",
+    "set_by": ["manychat_inbox_manual", "notion_status_webhook"]
+  },
+  "sequence": [
+    { "delay": "24h", "template": "quoteFollowUp.day1" },
+    { "delay": "72h", "template": "quoteFollowUp.day3" },
+    { "delay": "7d", "template": "quoteFollowUp.day7" }
+  ],
+  "cancel_conditions": [
+    "subscriber_replies",
+    "tag booked applied",
+    "tag confirmed applied"
+  ],
+  "notion_mirror": "Settings page → Message templates section",
+  "manychat_builder_notes": "Create sequence flow. Entry: tag quoted. Smart delay between steps. Exit on reply or booked tag."
+}

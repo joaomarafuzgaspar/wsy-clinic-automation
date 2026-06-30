@@ -1,0 +1,26 @@
+{
+  "flow": "review-request",
+  "version": "1.0",
+  "channels": ["whatsapp", "email"],
+  "entry_trigger": {
+    "type": "tag",
+    "tag": "completed",
+    "set_by": ["notion_status_webhook", "manychat_inbox_manual"]
+  },
+  "sequence": [
+    {
+      "delay": "2h",
+      "template": "reviewRequest",
+      "variables": {
+        "review_link": "https://search.google.com/local/writereview?placeid={GOOGLE_PLACE_ID}"
+      }
+    }
+  ],
+  "guardrails": [
+    "One review request per 6 months",
+    "Check Review requested date in Notion before sending"
+  ],
+  "post_send": {
+    "notion_update": { "Review requested": "today" }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "flow": "appointment-reminders",
+  "version": "1.0",
+  "channels": ["whatsapp", "email"],
+  "channel_priority": "whatsapp_first_email_fallback",
+  "entry_trigger": {
+    "type": "tag_and_custom_field",
+    "tag": "booked",
+    "custom_field": "appointment_datetime"
+  },
+  "sequence": [
+    { "offset_before_appointment": "48h", "template": "appointmentReminders.h48" },
+    { "offset_before_appointment": "24h", "template": "appointmentReminders.h24" },
+    { "offset_before_appointment": "2h", "template": "appointmentReminders.h2" }
+  ],
+  "reply_handling": {
+    "SIM": { "action": "add_tag", "tag": "confirmed" },
+    "NÃO": { "action": "add_tag", "tag": "needs_reschedule", "notion_update": "flag for manual follow-up" }
+  },
+  "manychat_builder_notes": "Use custom user field for appointment datetime. Schedule messages relative to field value. Parse YES/NO replies."
+}

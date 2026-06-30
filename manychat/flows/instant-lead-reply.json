@@ -1,0 +1,31 @@
+{
+  "flow": "instant-lead-reply",
+  "version": "1.0",
+  "channels": ["whatsapp", "instagram", "email"],
+  "plan_required": "Business",
+  "trigger": {
+    "type": "keyword_or_first_message",
+    "description": "First inbound message on any connected channel"
+  },
+  "actions": [
+    {
+      "step": 1,
+      "action": "send_message",
+      "template": "manychat/messages/pt-PT.ts → instantLeadReply.{channel}",
+      "delay_seconds": 0
+    },
+    {
+      "step": 2,
+      "action": "add_tag",
+      "tag": "new_subscriber"
+    },
+    {
+      "step": 3,
+      "action": "condition",
+      "if": "tag == website_lead AND phone is empty",
+      "then": "send_message → instantLeadReply.websiteLeadEmailOnly"
+    }
+  ],
+  "sla": "Reply within 60 seconds",
+  "manychat_builder_notes": "Import copy from pt-PT.ts. Set default reply for all channels. Branch email-only website leads to nurture path."
+}

@@ -1,0 +1,29 @@
+{
+  "flow": "reactivation",
+  "version": "1.0",
+  "channels": ["whatsapp", "email"],
+  "entry_trigger": {
+    "type": "scheduled_broadcast_or_tag",
+    "tag": "inactive",
+    "source": "notion_view_inactive_patients_12_months"
+  },
+  "actions": [
+    {
+      "step": 1,
+      "guard": "Reactivation sent == false in Notion",
+      "action": "send_message",
+      "template": "reactivation"
+    },
+    {
+      "step": 2,
+      "action": "notion_update",
+      "fields": { "Reactivation sent": true, "Status": "Inactive" }
+    }
+  ],
+  "guardrails": ["One reactivation per contact"],
+  "manual_steps": [
+    "Export inactive patients from Notion view weekly",
+    "Import or tag subscribers in Manychat",
+    "Run broadcast or enter reactivation flow"
+  ]
+}
