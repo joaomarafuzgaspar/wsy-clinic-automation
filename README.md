@@ -4,6 +4,8 @@ White-label automation platform for dental clinics in Portugal.
 
 **Stack:** [Manychat](https://manychat.com) (WhatsApp, Instagram, email) · [Notion](https://notion.so) (clinic dashboard) · [wsy-landing-page](https://github.com/joaomarafuzgaspar/wsy-landing-page) (lead capture)
 
+**Sales demo:** [wsy-demo](https://github.com/joaomarafuzgaspar/wsy-demo) — interactive walkthrough of the patient journey. Separate repo, separate stack. The product docs below are also copied there.
+
 ## Plans
 
 | Document | Description |
