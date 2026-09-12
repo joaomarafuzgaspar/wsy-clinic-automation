@@ -10,3 +10,9 @@ White-label automation platform for dental clinics in Portugal.
 |---|---|
 | [business-plan.md](plans/business-plan.md) | Partnership model, phases, costs, risks |
 | [implementation-plan.md](plans/implementation-plan.md) | Architecture, milestones, hours |
+
+## Docs
+
+| Document | Description |
+|---|---|
+| [manychat-api-architecture.md](docs/manychat-api-architecture.md) | Manychat API vs local server — hybrid architecture decision |
